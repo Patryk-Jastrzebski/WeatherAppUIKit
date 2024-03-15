@@ -16,6 +16,9 @@
 		3D316E422BA4896300D01DFD /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D316E412BA4896300D01DFD /* WeatherAppTests.swift */; };
 		3D316E4C2BA4896300D01DFD /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D316E4B2BA4896300D01DFD /* WeatherAppUITests.swift */; };
 		3D316E4E2BA4896300D01DFD /* WeatherAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D316E4D2BA4896300D01DFD /* WeatherAppUITestsLaunchTests.swift */; };
+		3D316E632BA4974C00D01DFD /* Loc.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D316E652BA4974C00D01DFD /* Loc.strings */; };
+		3D316E6F2BA4986000D01DFD /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D316E6D2BA4986000D01DFD /* Strings+Generated.swift */; };
+		3D316E702BA4986000D01DFD /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D316E6E2BA4986000D01DFD /* Assets+Generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,10 @@
 		3D316E472BA4896300D01DFD /* WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D316E4B2BA4896300D01DFD /* WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITests.swift; sourceTree = "<group>"; };
 		3D316E4D2BA4896300D01DFD /* WeatherAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3D316E642BA4974C00D01DFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Loc.strings; sourceTree = "<group>"; };
+		3D316E692BA497E800D01DFD /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Loc.strings; sourceTree = "<group>"; };
+		3D316E6D2BA4986000D01DFD /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		3D316E6E2BA4986000D01DFD /* Assets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +106,9 @@
 		3D316E292BA4896200D01DFD /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				3D316E6A2BA4980100D01DFD /* Resources */,
+				3D316E602BA4971400D01DFD /* Localizations */,
+				3D316E5F2BA496D200D01DFD /* SwiftGen */,
 				3D316E2A2BA4896200D01DFD /* AppDelegate.swift */,
 				3D316E2C2BA4896200D01DFD /* SceneDelegate.swift */,
 				3D316E2E2BA4896200D01DFD /* ViewController.swift */,
@@ -127,6 +137,38 @@
 			path = WeatherAppUITests;
 			sourceTree = "<group>";
 		};
+		3D316E5F2BA496D200D01DFD /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				3D316E6C2BA4982D00D01DFD /* Generated */,
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		3D316E602BA4971400D01DFD /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				3D316E652BA4974C00D01DFD /* Loc.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
+		3D316E6A2BA4980100D01DFD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3D316E6C2BA4982D00D01DFD /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				3D316E6E2BA4986000D01DFD /* Assets+Generated.swift */,
+				3D316E6D2BA4986000D01DFD /* Strings+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +179,7 @@
 				3D316E232BA4896200D01DFD /* Sources */,
 				3D316E242BA4896200D01DFD /* Frameworks */,
 				3D316E252BA4896200D01DFD /* Resources */,
+				3D316E5B2BA4908600D01DFD /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -213,6 +256,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = 3D316E1E2BA4896200D01DFD;
 			productRefGroup = 3D316E282BA4896200D01DFD /* Products */;
@@ -232,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D316E372BA4896300D01DFD /* LaunchScreen.storyboard in Resources */,
+				3D316E632BA4974C00D01DFD /* Loc.strings in Resources */,
 				3D316E342BA4896300D01DFD /* Assets.xcassets in Resources */,
 				3D316E322BA4896200D01DFD /* Main.storyboard in Resources */,
 			);
@@ -253,6 +298,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D316E5B2BA4908600D01DFD /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then \n    swiftlint\nelse \n    echo \"Swiftlint not installed\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3D316E232BA4896200D01DFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -260,6 +327,8 @@
 			files = (
 				3D316E2F2BA4896200D01DFD /* ViewController.swift in Sources */,
 				3D316E2B2BA4896200D01DFD /* AppDelegate.swift in Sources */,
+				3D316E6F2BA4986000D01DFD /* Strings+Generated.swift in Sources */,
+				3D316E702BA4986000D01DFD /* Assets+Generated.swift in Sources */,
 				3D316E2D2BA4896200D01DFD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +382,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		3D316E652BA4974C00D01DFD /* Loc.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D316E642BA4974C00D01DFD /* en */,
+				3D316E692BA497E800D01DFD /* pl */,
+			);
+			name = Loc.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -321,6 +399,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -384,6 +463,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -443,6 +523,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7HUC4265N2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -471,6 +552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7HUC4265N2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
