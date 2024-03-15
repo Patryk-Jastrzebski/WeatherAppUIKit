@@ -1,0 +1,17 @@
+strings:
+  inputs: WeatherApp/Localizations/en.lproj
+  outputs:
+    - templatePath: WeatherApp/SwiftGen/Assets.stencil
+      params:
+        publicAccess: true
+        enumName: Strings
+      output:  WeatherApp/SwiftGen/Generated/Strings+Generated.swift
+
+xcassets:
+  inputs: WeatherApp/Resources/.
+  outputs:
+    templatePath: WeatherApp/SwiftGen/Assets.stencil
+    params:
+      forceProvidesNamespaces: true
+      forceFileNameEnum: true
+    output: WeatherApp/SwiftGen/Generated/Assets+Generated.swift
