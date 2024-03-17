@@ -1,0 +1,8 @@
+{
+    "name": "DEV2.5",
+    "serverUrlProtocol": "https",
+    "serverUrlHost": "api.openweathermap.org/data",
+    "serverUrlScheme": "openweathermap",
+    "apiKey": "2950ce4d48b7bf40819874b632d832df"
+}
+
