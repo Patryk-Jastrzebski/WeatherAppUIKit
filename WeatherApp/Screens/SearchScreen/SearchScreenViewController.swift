@@ -8,10 +8,12 @@
 import UIKit
 
 class SearchScreenViewController: UIViewController {
+
+    @IBOutlet weak var stackView: UIStackView!
     
-    @IBOutlet private weak var tableView: UITableView!
+    let searchController = UISearchController(searchResultsController: nil)
     
-    private let viewModel: SearchScreenViewModel
+    var viewModel: SearchScreenViewModel
     
     init(viewModel: SearchScreenViewModel = SearchScreenViewModelImpl()) {
         self.viewModel = viewModel
@@ -25,24 +27,24 @@ class SearchScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        setupView()
+        title = "Weathers"
     }
     
-    private func setupTableView() {
-        tableView.register(cell: WeatherTableViewCell.self)
-        tableView.dataSource = self
-        tableView.reloadData()
+    private func setupView() {
+        searchController.delegate = self
+        searchController.searchBar.delegate = self
+        navigationItem.hidesSearchBarWhenScrolling = false
+        self.navigationItem.searchController = searchController
     }
 }
 
-extension SearchScreenViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+extension SearchScreenViewController: UISearchControllerDelegate, UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchText = ""
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(cell: WeatherTableViewCell.self, indexPath: indexPath)
-        cell.backgroundColor = UIColor.red
-        return cell
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.searchText = searchText
     }
 }

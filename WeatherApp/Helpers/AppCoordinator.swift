@@ -13,7 +13,7 @@ final class AppCoordinator {
     
     weak var window: UIWindow?
     
-    private init() {}
+    private init() { }
     
     func showFirstViewController() {
         let viewController = SearchScreenCreator().viewController
@@ -25,7 +25,9 @@ final class AppCoordinator {
             assertionFailure("window not set")
             return
         }
-        window.rootViewController = viewController
+        let navigationController = UINavigationController(rootViewController: viewController)
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
 
         if animated {
             UIView.transition(with: window,

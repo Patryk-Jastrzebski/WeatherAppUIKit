@@ -9,7 +9,9 @@ import Foundation
 
 struct SearchScreenCreator {
     var viewController: SearchScreenViewController {
-        let viewModel: SearchScreenViewModel = SearchScreenViewModelImpl()
+        let manager: HttpClient = HttpClientImpl.shared
+        let service: SearchNetworkService = SearchNetworkServiceImpl(manager: manager)
+        let viewModel: SearchScreenViewModel = SearchScreenViewModelImpl(service: service)
         let viewController = SearchScreenViewController(viewModel: viewModel)
         return viewController
     }
