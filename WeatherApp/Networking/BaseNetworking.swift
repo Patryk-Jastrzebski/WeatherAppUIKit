@@ -28,7 +28,7 @@ class BaseNetworking {
     internal func getBaseUrlWithVersion(with path: UrlFeaturePath, apiVersion: APIVersion = .dev) -> String {
         let configuration = Environment.shared.configuration
         // swiftlint:disable:next line_length
-        return "\(configuration.serverUrlProtocol)://\(configuration.serverUrlHost)\(apiVersion.rawValue)\(path.rawValue)?appid=\(configuration.apiKey)"
+        return "\(configuration.serverUrlProtocol)://\(configuration.serverUrlHost)\(apiVersion.rawValue)\(path.rawValue)?appid=\(configuration.apiKey)&"
     }
 
     init(manager: HttpClient = HttpClientImpl.shared) {
