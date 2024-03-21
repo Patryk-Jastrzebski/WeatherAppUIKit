@@ -32,4 +32,3 @@ struct Weather: Codable {
         try container.encodeIfPresent(details, forKey: .details)
     }
 }
-
