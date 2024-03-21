@@ -86,7 +86,7 @@ class WeatherInfoView: UIView {
     func configure(weather: Weather) {
         cityNameLabel.text = weather.name
         temperatureLabel.text = weather.main?.temperature?.kelvinToCelsiusString ?? ""
-        weatherDescriptionLabel1.text = "Max temperature: \(weather.main?.tempMax?.kelvinToCelsiusString ?? "")"
+        weatherDescriptionLabel1.text = weather.details.first?.description ?? ""
         weatherDescriptionLabel2.text = "Min temperature: \(weather.main?.tempMin?.kelvinToCelsiusString ?? "")"
         weatherIconImageView.image = UIImage(named: weather.details.first?.icon ?? Asset.Assets.Weather._01n.name)
     }
