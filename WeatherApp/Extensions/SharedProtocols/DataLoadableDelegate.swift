@@ -9,8 +9,9 @@ import Foundation
 
 protocol DataLoadableDelegate: AnyObject {
     @MainActor func didUpdateWeatherData()
-    @MainActor func handleError(_ shouldBeShown: Bool, errorDescription: String?)
+    @MainActor func handleError(_ errorDescription: String?)
     @MainActor func handleLoading(_ shouldBeShown: Bool)
+    @MainActor func handleTitleError(shouldBeShown: Bool, _ errorMessage: String)
 }
 
 extension DataLoadableDelegate {
@@ -24,8 +25,10 @@ extension DataLoadableDelegate {
             if let successAction {
                 await successAction(response)
             }
+        } catch let NetworkError.apiError(errorMessage) {
+            handleError(errorMessage?.getErrorMessage())
         } catch {
-            handleError(true, errorDescription: error.localizedDescription)
+            handleError(error.localizedDescription)
         }
     }
     
@@ -38,8 +41,10 @@ extension DataLoadableDelegate {
             if let successAction {
                 await successAction(response)
             }
+        } catch let NetworkError.apiError(errorMessage) {
+            handleError(errorMessage?.getErrorMessage())
         } catch {
-            handleError(true, errorDescription: error.localizedDescription)
+            handleError(error.localizedDescription)
         }
     }
 }

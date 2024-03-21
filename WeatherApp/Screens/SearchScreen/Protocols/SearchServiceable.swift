@@ -16,6 +16,7 @@ protocol SearchServiceable: AnyObject, WeatherUITableViewModel {
 
 extension SearchServiceable {
     func getWeatherForSearchPhrase() async {
+        guard !searchText.isEmpty else { return }
         await delegate?.fetchData(data: searchText,
                                   with: service.getWeatherInfoWithCity,
                                   successAction: { [weak self] response in

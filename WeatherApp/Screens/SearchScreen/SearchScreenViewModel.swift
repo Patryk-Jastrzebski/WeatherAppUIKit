@@ -7,6 +7,12 @@
 
 import Foundation
 import CoreLocation
+import Network
+
+private extension String {
+    static let networkMonitor = "NetworkMonitor"
+    static let defaultErrorLocationMessage = "No access to the user's location"
+}
 
 protocol SearchScreenViewModel: SearchServiceable, Debouncable {
     var searchWorkItem: DispatchWorkItem? { get set }
@@ -15,6 +21,7 @@ protocol SearchScreenViewModel: SearchServiceable, Debouncable {
 final class SearchScreenViewModelImpl: NSObject, SearchScreenViewModel, CLLocationManagerDelegate {
     let service: SearchNetworkService
     private let locationManager = CLLocationManager()
+    private let monitor = NWPathMonitor()
     
     var currentWeatherForSearch: Weather?
     var currentWeatherForUserLocation: Weather?
@@ -67,7 +74,8 @@ final class SearchScreenViewModelImpl: NSObject, SearchScreenViewModel, CLLocati
         getWeatherForUserLocationWithTask(for: locations.first?.coordinate)
     }
     
+    @MainActor
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        log(error)
+        delegate?.handleTitleError(shouldBeShown: true, .defaultErrorLocationMessage)
     }
 }

@@ -49,7 +49,7 @@ final class HttpClientImpl: HttpClient {
 
         guard let response = response as? HTTPURLResponse,
               response.statusCode >= 200 && response.statusCode < 300 else {
-            throw NetworkError.httpError
+            throw NetworkError.apiError(data: data)
         }
 
         let result = try JSONDecoder().decode(T.self, from: data)
@@ -64,7 +64,7 @@ final class HttpClientImpl: HttpClient {
         let (data, response) = try await session.data(for: request)
         guard let response = response as? HTTPURLResponse,
               response.statusCode >= 200 && response.statusCode < 300 else {
-            throw NetworkError.httpError
+            throw NetworkError.apiError(data: data)
         }
         return data
     }
