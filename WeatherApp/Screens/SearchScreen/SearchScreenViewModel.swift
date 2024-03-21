@@ -40,7 +40,12 @@ final class SearchScreenViewModelImpl: NSObject, SearchScreenViewModel, CLLocati
     private func getWeatherForSearchPhraseWithTask() {
         Task { @MainActor in
             await getWeatherForSearchPhrase()
-            delegate?.didUpdateWeatherData()
+        }
+    }
+    
+    private func getWeatherForUserLocationWithTask(for location: CLLocationCoordinate2D?) {
+        Task { @MainActor in
+            await getWeatherForUserLocation(for: location)
         }
     }
     

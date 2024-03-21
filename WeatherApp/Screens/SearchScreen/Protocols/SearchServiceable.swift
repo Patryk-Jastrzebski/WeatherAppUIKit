@@ -12,7 +12,6 @@ protocol SearchServiceable: AnyObject, WeatherUITableViewModel {
     var delegate: DataLoadableDelegate? { get set }
     var service: SearchNetworkService { get }
     var searchText: String { get set }
-    func getWeatherForUserLocationWithTask(for userLocation: CLLocationCoordinate2D?)
 }
 
 extension SearchServiceable {
@@ -21,18 +20,17 @@ extension SearchServiceable {
                                   with: service.getWeatherInfoWithCity,
                                   successAction: { [weak self] response in
             self?.currentWeatherForSearch = response
+            self?.delegate?.didUpdateWeatherData()
         })
     }
     
-    func getWeatherForUserLocationWithTask(for userLocation: CLLocationCoordinate2D?) {
+    func getWeatherForUserLocation(for userLocation: CLLocationCoordinate2D?) async {
         guard let userLocation else { return }
-        Task {
-            do {
-                currentWeatherForUserLocation = try await service.getWeatherInfoByCoordinates(lat: userLocation.latitude,
-                                                                                              lon: userLocation.longitude)
-            } catch {
-                log(error)
-            }
-        }
+        await delegate?.fetchData(data: (userLocation.latitude, userLocation.longitude),
+                                  with: service.getWeatherInfoByCoordinates,
+                                  successAction: { [weak self] response in
+            self?.currentWeatherForUserLocation = response
+            self?.delegate?.didUpdateWeatherData()
+        })
     }
 }
