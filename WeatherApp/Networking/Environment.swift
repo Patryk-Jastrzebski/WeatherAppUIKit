@@ -30,6 +30,7 @@ class Environment {
 }
 
 private extension Environment {
+    // TODO: Refactor to xcconfig
     private static func loadConfiguration(decoder: JSONDecoder = JSONDecoder(),
                                           fileManager: FileManager = FileManager()) -> Configuration {
         do {

@@ -44,6 +44,8 @@
 		3D92C81E2BAC796400C68A99 /* SearchServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D92C81D2BAC796400C68A99 /* SearchServiceable.swift */; };
 		3D92C8212BAC7DA000C68A99 /* Debouncable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D92C8202BAC7DA000C68A99 /* Debouncable.swift */; };
 		3D92C8232BAC909E00C68A99 /* DataLoadableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D92C8222BAC909E00C68A99 /* DataLoadableDelegate.swift */; };
+		3DCD2B4B2BAC9AEA00F72196 /* Double+Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD2B4A2BAC9AEA00F72196 /* Double+Temperature.swift */; };
+		3DCD2B4E2BACAA5F00F72196 /* JSONDecoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD2B4D2BACAA5F00F72196 /* JSONDecoder+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		3D92C81D2BAC796400C68A99 /* SearchServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceable.swift; sourceTree = "<group>"; };
 		3D92C8202BAC7DA000C68A99 /* Debouncable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncable.swift; sourceTree = "<group>"; };
 		3D92C8222BAC909E00C68A99 /* DataLoadableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadableDelegate.swift; sourceTree = "<group>"; };
+		3DCD2B4A2BAC9AEA00F72196 /* Double+Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Temperature.swift"; sourceTree = "<group>"; };
+		3DCD2B4D2BACAA5F00F72196 /* JSONDecoder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +273,8 @@
 				3D92C81F2BAC7D9100C68A99 /* SharedProtocols */,
 				3D316E8B2BA6E13700D01DFD /* Data+Extension.swift */,
 				3D316EA82BA6E93500D01DFD /* UITableView+Extension.swift */,
+				3DCD2B4A2BAC9AEA00F72196 /* Double+Temperature.swift */,
+				3DCD2B4D2BACAA5F00F72196 /* JSONDecoder+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 				3D316E242BA4896200D01DFD /* Frameworks */,
 				3D316E252BA4896200D01DFD /* Resources */,
 				3D316E5B2BA4908600D01DFD /* SwiftLint */,
+				3DCD2B4C2BACA61D00F72196 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -491,6 +498,24 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then \n    swiftlint\nelse \n    echo \"Swiftlint not installed\"\nfi\n";
 		};
+		3DCD2B4C2BACA61D00F72196 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftgen >/dev/null; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -516,6 +541,7 @@
 				3D316E9E2BA6E55700D01DFD /* SearchScreenCreator.swift in Sources */,
 				3D316E9C2BA6E52A00D01DFD /* SearchScreenViewModel.swift in Sources */,
 				3D316EAF2BA6EBE100D01DFD /* AppCoordinator.swift in Sources */,
+				3DCD2B4E2BACAA5F00F72196 /* JSONDecoder+Extension.swift in Sources */,
 				3D316E862BA6DB2800D01DFD /* Environment.swift in Sources */,
 				3D316E8E2BA6E19800D01DFD /* Logger.swift in Sources */,
 				3D316E942BA6E40E00D01DFD /* SearchScreenViewController.swift in Sources */,
@@ -526,6 +552,7 @@
 				3D316E2D2BA4896200D01DFD /* SceneDelegate.swift in Sources */,
 				3D92C8212BAC7DA000C68A99 /* Debouncable.swift in Sources */,
 				3D92C81E2BAC796400C68A99 /* SearchServiceable.swift in Sources */,
+				3DCD2B4B2BAC9AEA00F72196 /* Double+Temperature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

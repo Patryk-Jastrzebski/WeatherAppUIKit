@@ -16,8 +16,19 @@ extension Data {
 
         return ""
     }
+    
+    func getErrorMessage() -> String? {
+        if let errorMessage = try? JSONDecoder.default.decode(ErrorMessage.self, from: self) {
+            return errorMessage.message
+        }
+        return nil
+    }
 
     private func pringJSONData(_ data: Data) {
         print(String(decoding: data, as: UTF8.self))
     }
+}
+
+struct ErrorMessage: Codable {
+    let message: String?
 }

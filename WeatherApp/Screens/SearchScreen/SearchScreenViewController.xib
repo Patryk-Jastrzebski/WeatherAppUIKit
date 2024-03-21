@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchScreenViewController" customModule="WeatherApp" customModuleProvider="target">
             <connections>
+                <outlet property="spinner" destination="V2w-3W-HVs" id="lad-4p-O1G"/>
                 <outlet property="tableView" destination="JnH-ZE-KPo" id="Uz9-qt-9PJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,13 +24,20 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="V2w-3W-HVs">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V2w-3W-HVs" secondAttribute="trailing" id="34Y-zM-0Yf"/>
                 <constraint firstItem="JnH-ZE-KPo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="837-gb-Be9"/>
+                <constraint firstItem="V2w-3W-HVs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="HSf-cB-Qmi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JnH-ZE-KPo" secondAttribute="bottom" id="Ntm-z6-9in"/>
+                <constraint firstItem="V2w-3W-HVs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cFQ-Xd-Bwp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JnH-ZE-KPo" secondAttribute="trailing" id="fbX-z4-cYp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="V2w-3W-HVs" secondAttribute="bottom" id="v9p-WB-wgA"/>
                 <constraint firstItem="JnH-ZE-KPo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xyT-1h-vy4"/>
             </constraints>
             <point key="canvasLocation" x="140" y="20"/>
